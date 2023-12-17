@@ -77,10 +77,8 @@ retreives the target room based on last visit times, finaly sends the target roo
 
 
 ### Temporal Diagram (UML Sequence Diagram)
-The following figure represents the UML sequence diagram of this package. In the initial state, user launches the nodes, causing some of them
-to get some rosparams such as ``environment_size`` and ``initial_pose``. Then, in each loop cycle, ``armor_service`` which is implemented inside
-``finite_state_machine`` node, gets the current robot pose from ``robot-state`` node and updates the ontology, then the target room will be sent to the ``planner_client`` through ``/target_point`` topic and also the state of gets changed considering the target room. ``Planner`` tries to find the path and 
-sends it to the ``planner_client`` as ``PlanResult``. Finally the ``controller_client`` node subscribes the ``/path`` topic and sends it as ``ControlGoal`` to the ``controller`` node so that it can move the robot by setting the robot pose through ``/state/set_pose`` service and the cycles goes on again.
+The following figure represents the UML sequence diagram of this package. In the initial state, user launches the nodes, and ``fsm`` node, loads the ontology. In each loop cycle, ``armor_service`` which is implemented inside
+``fsm`` node, gets the current robot pose from ``robot-state`` node and updates the ontology, then the target room will be sent to the ``planner`` through ``/target_room`` topic and also the state of gets changed considering the target room. ``planner`` tries to find the path and sends it to the ``controller`` node so that it can move the robot by setting the robot pose through ``/state/set_pose`` service and the cycles goes on again.
 
 <p align="center">
 <img src="https://github.com/saeedkalateh/assignment1_exp/assets/83904267/3ee61dcc-b3e3-445c-92d4-d0fda9e260b4" width="820" title="seq1">
@@ -143,4 +141,4 @@ $ roslaunch assignment1 fsm.launch
 
 ## Authors and Contacts
 - Saeed Kalateh
-- email: 4982001@studenti.unige.it
+- email: s4982001@studenti.unige.it
