@@ -139,11 +139,6 @@ $ source devel/setup.bash
 $ roslaunch assignment1 fsm.launch
 ```
 
-The above gif shows the overview of launching this package, as it can be seen in the finite state machine the robot starts from room "E", and 
-considering the initial last visit times defined in the ontology, the first target room is "R1". When it reaches the target room the next one 
-is "R3" and the "R4" but before reaching "R4" the battery level gets below the threshold "7" and causes the robot to go first to room "E" and then 
-"R4", and so on.
-
 ## Working Hypothesis and Environment
 
 1. System's Features: The topological map is considered to be in size 10x10. Each time when a room is chosen as a target room from the ontology, the corresponding point will be sent to the planner as ``PlanGoal``
