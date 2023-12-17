@@ -71,9 +71,9 @@ through the ``state/set_pose`` service. Morever in each movement step, the robot
 
 ### finite state machin - aRMOR
 Defines the states and transitions for the finite state machine of the topological map, it also 
-uses ``topological_map.py`` helper script to update the ontology while the process is running, and 
+uses ``helper.py`` helper script to update the ontology while the process is running, and 
 retreives the target room based on last visit times, finaly sends the target room pose to the 
-``planner_client`` through ``/target_point`` in order to find the path.
+``motion_planner`` through ``/target_point`` in order to find the path.
 
 
 ### Temporal Diagram (UML Sequence Diagram)
