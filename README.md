@@ -5,7 +5,7 @@ This package is an experiment to use a topogical map ontology for controling a r
 environment with multiple rooms and a mobile robot. 
 
 <p align="center">
-<img src="https://github.com/saeedkalateh/assignment1_exp/tree/main/docs/source/diagram/topological_map.jpg" width="300" title="topological map">
+<img src="https://github.com/saeedkalateh/assignment1_exp/assets/83904267/572b9b2d-51da-4fec-b228-1acc90fb24cc" width="300" title="topological map">
 </p>
 
 The robot start in the E location and waits until it receives the information to build the
@@ -33,7 +33,7 @@ for using the ontology of topogical map for controling the robot in ROS.
 The software architucture is represented in the following figure.
 
 <p align="center">
-<img src="https://github.com/saeedkalateh/assignment1_exp/tree/main/docs/source/diagram/com1.png" width="620" title="com1">
+<img src="https://github.com/saeedkalateh/assignment1_exp/assets/83904267/cd5e9135-4c84-44cd-86cf-7804a5e19f0d" width="620" title="com1">
 </p>
 
 The components of this software architucture can be described as follows:
@@ -89,8 +89,10 @@ to get some rosparams such as ``environment_size`` and ``initial_pose``. Then, i
 sends it to the ``planner_client`` as ``PlanResult``. Finally the ``controller_client`` node subscribes the ``/path`` topic and sends it as ``ControlGoal`` to the ``controller`` node so that it can move the robot by setting the robot pose through ``/state/set_pose`` service and the cycles goes on again.
 
 <p align="center">
-<img src="https://github.com/saeedkalateh/assignment1_exp/tree/main/docs/source/diagram/seq1.png" width="820" title="seq1">
+<img src="https://github.com/saeedkalateh/assignment1_exp/assets/83904267/3ee61dcc-b3e3-445c-92d4-d0fda9e260b4" width="820" title="seq1">
 </p>
+
+
 
 ## Usage
 ### Installation
