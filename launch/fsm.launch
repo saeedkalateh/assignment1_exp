@@ -1,0 +1,13 @@
+<launch>
+
+    <rosparam param="state/initial_pose"> [3.5,  1.0] </rosparam>
+    <rosparam param="config/environment_size"> [10.0, 10.0] </rosparam>
+        
+    <node pkg="armor" type="execute" name="armor_service" args="it.emarolab.armor.ARMORMainService"> </node>
+    <node pkg = "assignment1" type = "robot_state.py" name = "robot_state" output = "screen"> </node>
+    <node pkg = "assignment1" type = "planner.py" name = "planner"> </node>
+    <node pkg = "assignment1" type = "controller.py" name = "controller"> </node>
+    <node pkg = "assignment1" type = "fsm.py" name = "fsm" output = "screen"> </node>
+    <node pkg = "smach_viewer" type = "smach_viewer.py" name = "smach_viewer"> </node>
+
+</launch>
