@@ -54,10 +54,6 @@ is considered to be small to prevent conflicts between robot real situation and 
 When a new ``via_points`` is generated, the updated plan is provided as ``feedback``. When all the 
 ``via_points`` have been generated, the plan is provided as ``results``.
 
-There is also a ``planner_client`` node, which gets the target point from ``finite_state_machine`` node
-through ``/target_point`` topic and sends it to the planner server as action goal. When the result is found
-as it is described above, publishes it to the ``/path`` topic to be used by the ``controller_client`` node.
-
 ### motion controller
 The ``controller`` node implements an action server named ``motion/controller``. This is done by the means of the 
 ``SimpleActionServer`` class based on the ``Control`` action message. This action server requires the 
@@ -72,8 +68,6 @@ the action service provides a result by propagating the current robot position, 
 through the ``state/set_pose`` service. Morever in each movement step, the robot battery level is read by the
 ``controller`` node using ``state/get_battery_level`` and after decreasing gets set through ``state/set_battery_level``.
 
-The provided ``controller_client`` node, subscribes ``/path`` topic to get the ``via_points`` and then sends them
-to the ``controller`` server as an action goal.
 
 ### finite state machin - aRMOR
 Defines the states and transitions for the finite state machine of the topological map, it also 
